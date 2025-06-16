@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor academico</title>
+    <link rel="shortcut icon" href="../IMG/iconGestor.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+</head>
+<body>
+    <section id="pagina1">
+        <div class="contenedor">
+            <div class="contenedor2">
+                <h1>CREAR CUENTA COLEGIO</h1>
+                <form id="formulario_crearColegio" enctype="multipart/form-data"> 
+                    <input type="text" id="nit" name="nit" placeholder="NIT DEL COLEGIO" required/>
+                    <input type="text" id="nombre" name="nombre" placeholder="NOMBRES DEL COLEGIO" spellcheck="false" required/>
+                    <input type="text" id="direccion" name="direccion" placeholder="DIRECCION DEL COLEGIO" spellcheck="false" required/>
+                    <input type="text" id="telefono" name="telefono" placeholder="TELEFONO" required/>
+                    <input type="email" id="email" name="email" placeholder="EMAIL DEL COLEGIO" spellcheck="false" required/>
+                    <input type="text" id="pais" name="pais" placeholder="PAIS DE UBICACION" spellcheck="false" required/>
+                    <input type="text" id="departamento" name="departamento" placeholder="DEPARTAMENTO" spellcheck="false" required/>
+                    <input type="text" id="ciudad" name="ciudad" placeholder="CIUDAD" spellcheck="false" required/>
+                    <input type="text" id="descripcion" name="descripcion" placeholder="DESCRIPCION DEL COLEGIO" required/>
+                    <label for="foto" class="text-P-Foto">Foto de perfil:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*">
+                    <br>
+                    <button class="btn-registrar" type="submit">CONTINUAR</button>
+                </form>
+                <a href="#" onclick="iniciarS()"><p class="iniciar-sesion">Iniciar sesión</p></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pagina2">
+        <div class="contenedor">
+            <div class="contenedor2">
+                <h1>CREAR CUENTA COORDINADOR</h1>
+                <form id="formulario_crearCuentaCoor_pagina2" enctype="multipart/form-data">
+
+                    <input type="hidden" id="id_col" name="id_col" placeholder="ID COLEGIO" readonly/>
+
+                    <select name="tipo_documento" id="tipo_documento" value="<?php echo isset($_GET['tipo_documento']) ? htmlspecialchars($_GET['tipo_documento']) : ''; ?>" required>
+                        <option value="">--- Seleccione el tipo de documento ---</option>
+                        <option value="CC" >Cédula de Ciudadania = CC</option>
+                        <option value="CE" >Cédula de Extranjería = CE</option>
+                        <option value="PA" >Pasaporte = PA</option>
+                        <option value="NIT" >Número de Identificación Tributaria = NIT</option>
+                        <option value="PEP" >Permiso Especial de Permanencia = PEP</option>
+                        <option value="DNI" >Documento Nacional de Identidad = DNI</option>
+                        <option value="NIUP" >Número Único de Identificación Personal = NIUP</option>
+                    </select>
+
+                    <input type="text" id="numero_documento" name="numero_documento" placeholder="NUMERO DE DOCUMENTO" required/>
+                    <input type="text" id="nombres" name="nombres" placeholder="NOMBRE" spellcheck="false" required/>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="APELLIDOS" spellcheck="false" required/>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="FECHA DE NACIMIENTO" required/>
+
+                    <select name="generoo" id="generoo" required>
+                        <option value="">--- Seleccione un genero ---</option>
+                        <option value="Masculino" >Masculino</option>
+                        <option value="Femenino" >Femenino</option>
+                    </select>
+
+                    <input type="email" id="email" name="email" placeholder="EMAIL" spellcheck="false" required/>
+                    <input type="text" id="telefono" name="telefono" placeholder="TELEFONO" required/>
+                    <input type="text" id="direccion" name="direccion" placeholder="DIRECCION" spellcheck="false" required/>
+                    <input type="text" id="descripcion" name="descripcion" placeholder="DESCRIPCION" required/>
+                    <input type="text" id="usuario" name="usuario" placeholder="USUARIO" spellcheck="false" required/>
+                    <input type="password" id="clave" name="clave" placeholder="CLAVE" required/>
+
+                    <label for="foto" class="text-P-Foto">Foto de perfil:</label>
+                    <input type="file" id="foto" name="foto_coor" accept="image/*">
+
+                    <br>
+
+
+                    <button class="btn-registrar">REGISTRARSE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="../Js/crearCuenta/crearCuenta.js"></script>
+    <script src="../Js/crearCuenta/configuracionSecciones.js"></script>
+</body>
+</html>

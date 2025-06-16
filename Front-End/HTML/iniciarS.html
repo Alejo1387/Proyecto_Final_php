@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor academico</title>
+    <link rel="shortcut icon" href="../IMG/iconGestor.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+</head>
+<body>
+    <section id="IniciarS">
+        <div class="contenedor">
+            <a href="./informacion.html" id="enlace-contenedor">Atras</a>
+            <div class="contenedor2">
+                <h1 class="tituloIniciar">GESTOR ACADEMICO</h1>
+                <form id="form_iniciarS">
+                    <input type="text" id="usuario" name="usuario" placeholder="USUARIO" spellcheck="false" required/>
+                    <input type="password" id="clave" name="clave" placeholder="CLAVE" required/>
+                    <br>
+                    <p id="error" class="error"></p>
+                    <br>
+                    <p class="olvide-clave"><a href="#" id="enlace-OC">¿Olvidaste tu contraseña?</a></p>
+                    <button class="btn-entrar" name="iniciarSeccion" type="submit">ENTRAR</button>
+                    <a href="./crearCuenta.html" id="aa"><p class="crear-cuenta">Crear cuenta</p></a>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script src="../Js/iniciarS.js"></script>
+</body>
+</html>

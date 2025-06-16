@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url(../IMG/pointer.png), auto;
+}
+
+#pagina1 {
+    display: flex;
+}
+#pagina2 {
+    display: none;
+}
+
+/* Pagina de informacion */
+
+#informacion #Principal {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgb(12, 53, 75);
+    color: white;
+} #informacion .P-Segun {
+    display: flex;
+} #informacion .P-Segun2 {
+    display: flex;
+    justify-content: flex-end;
+}
+ #informacion .pointer1:hover, .pointer2:hover {
+    transform: scale(1.05);
+} #informacion .separador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 150px;
+    margin-top: 100px;
+    box-sizing: border-box;
+}
+   #informacion .borde {
+    border-radius: 50%;
+} #informacion .espacio {
+    padding: 35px 0px 0px 5px;
+} #informacion .espacio-a {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(119, 64, 7);
+    text-decoration: none;
+    color: white;
+    border: 2px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+} #informacion .espacio-a:hover {
+    background-color: rgb(177, 175, 163);
+    color: black;
+} #informacion #Principal2 {
+    background-color: rgb(177, 175, 163);
+    padding: 10px;
+    min-height: 100vh;
+    padding: 50px;
+} #informacion #esp-f-a {
+    margin: 50px 50px 0px 50px;
+    width: 50px;
+} #informacion #ultimo {
+    color: white;
+    padding: 50px;
+    background-color: rgb(12, 53, 75);
+} #informacion .TituloExp {
+    margin-top: 50px;
+    text-align: center;
+} #informacion .titulo {
+    color:  rgb(12, 119, 171);
+    margin-bottom: 30px;
+    font-size: 60px;
+} #informacion .titulo:hover {
+    transform: scale(1.1);
+} #informacion li {
+    margin: 10px;
+} #informacion .separador3, .separador5 {
+    text-align: end;
+}
+
+/* Pagina de iniciar sesion */
+
+#IniciarS {
+    background: url(../IMG/FondoIniciarS.jpeg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+} #IniciarS .contenedor {
+    background-color: transparent;
+    width: 500px;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+} #IniciarS .contenedor2 {
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+} #IniciarS #enlace-contenedor {
+    padding: 20px;
+    background-color: #a4c79c;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+} #IniciarS h1 {
+    color: white;
+    margin-bottom: 30px;
+    font-weight: normal;
+} #IniciarS input {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: rgb(80, 78, 78);
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+} #IniciarS input:hover {
+    background: #000;
+} #IniciarS .olvide-clave {
+    margin: 10px 0;
+    font-size: 0.9rem;
+} #IniciarS .btn-entrar {
+    background-color: #a4c79c;
+    color: #000;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+} #IniciarS .btn-entrar:hover, .crear-cuenta:hover, #enlace-contenedor:hover {
+    background-color: #9ab18f;
+} #IniciarS #enlace-OC {
+    color: white;
+} #IniciarS .crear-cuenta {
+    background-color: #a4c79c;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+} #IniciarS #aa {
+    color: #000;
+} #IniciarS a {
+    text-decoration: none;
+} #IniciarS .error {
+    color: white;
+}
+
+/* Pagina de crear cuenta colegio */
+
+#pagina1 {
+    background: url(../IMG/FondoCrearC.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: auto;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+} #pagina1 .contenedor {
+    background-color: transparent;
+    width: 500px;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+} #pagina1 .contenedor2 {
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+} #pagina1 h1 {
+    color: white;
+    margin-bottom: 30px;
+    font-weight: normal;
+} #pagina1 input, select {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: rgb(80, 78, 78);
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+} #pagina1 .text-P-Foto {
+    color: white;
+    font-size: 31px;
+} #pagina1 input:hover {
+    background: #000;
+} #pagina1 .btn-registrar {
+    background-color: #a4c79c;
+    color: #000;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+} #pagina1 .iniciar-sesion {
+    background-color: #a4c79c;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+} #pagina1 a{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+} #pagina1 #enlace-contenedor {
+    padding: 20px;
+    background-color: #a4c79c;
+    border: none;
+    color: #000;
+    border-radius: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+/* Pagina de crear cuenta coordinador */
+
+#pagina2 {
+    background: url(../IMG/FondoCrearC.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: auto;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+} #pagina2 .contenedor {
+    background-color: transparent;
+    width: 500px;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+} #pagina2 .contenedor2 {
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+} #pagina2 h1 {
+    color: white;
+    margin-bottom: 30px;
+    font-weight: normal;
+} #pagina2 input, select {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: rgb(80, 78, 78);
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+} #pagina2 .text-P-Foto {
+    color: white;
+    font-size: 31px;
+} #pagina2 input:hover {
+    background: #000;
+} #pagina2 .btn-registrar {
+    background-color: #a4c79c;
+    color: #000;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+} #pagina2 .iniciar-sesion {
+    background-color: #a4c79c;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+} #pagina2 a{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 644px) {
+    #Principal {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 558px) {
+    #esp-f-a {
+        margin: 20px 20px 0px 20px;
+    }
+}
+
+@media (max-width: 404px) {
+    #esp-f-a {
+        margin: 10px 10px 0px 10px;
+    }
+}
+
+@media (max-width: 355px) {
+    .espacio-a {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 416px) {
+    .tituloIniciar {
+        font-size: 25px;
+    }
+}
