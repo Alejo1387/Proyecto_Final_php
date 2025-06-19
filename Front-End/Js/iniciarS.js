@@ -15,7 +15,6 @@ formularioIniciarS.addEventListener('submit', function(event) {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
         if (data.success) {
             window.location.href = './cuentas/CuentaCoor.html';
         } else {

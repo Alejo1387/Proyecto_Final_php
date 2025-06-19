@@ -12,27 +12,32 @@
         <div class="contenedor">
             <div class="contenedor2">
                 <h1>CREAR CUENTA COLEGIO</h1>
+                <p id="mensaje_Col"></p>
+                <br><br>
                 <form id="formulario_crearColegio" enctype="multipart/form-data"> 
-                    <input type="text" id="nit" name="nit" placeholder="NIT DEL COLEGIO" required/>
-                    <input type="text" id="nombre" name="nombre" placeholder="NOMBRES DEL COLEGIO" spellcheck="false" required/>
-                    <input type="text" id="direccion" name="direccion" placeholder="DIRECCION DEL COLEGIO" spellcheck="false" required/>
-                    <input type="text" id="telefono" name="telefono" placeholder="TELEFONO" required/>
-                    <input type="email" id="email" name="email" placeholder="EMAIL DEL COLEGIO" spellcheck="false" required/>
-                    <input type="text" id="pais" name="pais" placeholder="PAIS DE UBICACION" spellcheck="false" required/>
-                    <input type="text" id="departamento" name="departamento" placeholder="DEPARTAMENTO" spellcheck="false" required/>
-                    <input type="text" id="ciudad" name="ciudad" placeholder="CIUDAD" spellcheck="false" required/>
-                    <input type="text" id="descripcion" name="descripcion" placeholder="DESCRIPCION DEL COLEGIO" required/>
+                    <input type="text" id="nit_Colegio" name="nit" placeholder="NIT DEL COLEGIO" required/>
+                    <input type="text" id="nombre_Colegio" name="nombre" placeholder="NOMBRES DEL COLEGIO" spellcheck="false" required/>
+                    <input type="text" id="direccion_Colegio" name="direccion" placeholder="DIRECCION DEL COLEGIO" spellcheck="false" required/>
+                    <input type="text" id="telefono_Colegio" name="telefono" placeholder="TELEFONO" required/>
+                    <input type="email" id="email_Colegio" name="email" placeholder="EMAIL DEL COLEGIO" spellcheck="false" required/>
+                    <input type="text" id="pais_Colegio" name="pais" placeholder="PAIS DE UBICACION" spellcheck="false" required/>
+                    <input type="text" id="departamento_Colegio" name="departamento" placeholder="DEPARTAMENTO" spellcheck="false" required/>
+                    <input type="text" id="ciudad_Colegio" name="ciudad" placeholder="CIUDAD" spellcheck="false" required/>
+                    <input type="text" id="descripcion_Colegio" name="descripcion" placeholder="DESCRIPCION DEL COLEGIO" required/>
                     <label for="foto" class="text-P-Foto">Foto de perfil:</label>
-                    <input type="file" id="foto" name="foto" accept="image/*">
+                    <input type="file" id="foto_Colegio" name="foto" accept="image/*">
                     <br>
                     <button class="btn-registrar" type="submit">CONTINUAR</button>
                 </form>
                 <a href="#" onclick="iniciarS()"><p class="iniciar-sesion">Iniciar sesión</p></a>
+                <br><br>
+                <p id="mensaje_Col2"></p>
             </div>
         </div>
     </section>
 
     <section id="pagina2">
+        <a href="" onclick="mostrarSeccion2('pagina1')">Regresar</a>
         <div class="contenedor">
             <div class="contenedor2">
                 <h1>CREAR CUENTA COORDINADOR</h1>
@@ -68,9 +73,11 @@
                     <input type="text" id="descripcion" name="descripcion" placeholder="DESCRIPCION" required/>
                     <input type="text" id="usuario" name="usuario" placeholder="USUARIO" spellcheck="false" required/>
                     <input type="password" id="clave" name="clave" placeholder="CLAVE" required/>
-
                     <label for="foto" class="text-P-Foto">Foto de perfil:</label>
                     <input type="file" id="foto" name="foto_coor" accept="image/*">
+
+                    <br>
+                    <p id="mensaje"></p>
 
                     <br>
 

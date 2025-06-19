@@ -223,6 +223,9 @@
     border-radius: 10px;
     margin-left: 30px;
     cursor: pointer;
+} #pagina1 #mensaje_Col, #pagina1 #mensaje_Col2 {
+    padding: 20px;
+    color: black;
 }
 
 /* Pagina de crear cuenta coordinador */
