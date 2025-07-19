@@ -1,9 +1,10 @@
 <?php
-    ob_clean();
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
 
+    ob_clean();
+    ob_clean();
     header("Content-Type: application/json");
+    ini_set('display_errors', 0);
+    error_reporting(0);
 
     require_once "conexion.php";
 
@@ -24,13 +25,8 @@
             $foto = "";
         }
 
-        // $foto = $_FILES["foto_perfil_colegio"];
-    
-
         // $response = array($nit, $nombre, $direccion, $telefono, $email, $pais, $departamento, $ciudad, $descripcion, $foto);
         // echo json_encode($response);
-
-        
 
         $nombreImagen = "defaultPerfilColegio.png";
 
@@ -40,10 +36,11 @@
 
             // Sanitizar nombre y evitar espacios raros
             $nombreImagen = time() . "_" . preg_replace("/[^a-zA-Z0-9.]/", "_", $nombreOriginal);
-            $rutaDestino = __DIR__ . "/uploads/" . $nombreImagen;
+            $rutaDestino = __DIR__ . "/../uploads/" . $nombreImagen;
 
             if (!move_uploaded_file($archivoTmp, $rutaDestino)) {
-                $error =  "❌ Error al subir la imagen. Asegúrate de que la carpeta 'uploads/' exista y tenga permisos.";
+                $response["errores"][] =  "❌ Error al subir la imagen. Asegúrate de que la carpeta 'uploads/' exista y tenga permisos.";
+                echo json_encode($response);
                 exit;
             }
         }
@@ -69,9 +66,12 @@
         UNION
         SELECT telefono FROM PROFESORES WHERE telefono = ?
         UNION
-        SELECT email FROM COLEGIOS WHERE telefono = ?
+        SELECT telefono FROM COLEGIOS WHERE telefono = ?
         ";
         $stmt4 = $pdo->prepare($sqlVerificarNumero);
+
+        $sqlVerificarNit = "SELECT nit FROM COLEGIOS WHERE nit = ?";
+        $stmt5 = $pdo->prepare($sqlVerificarNit);
 
         $response = [
             "errores" => []
@@ -80,9 +80,13 @@
         try {
             $stmt3->execute([$email, $email, $email, $email]);
             $stmt4->execute([$telefono, $telefono, $telefono, $telefono]);
+            $stmt5->execute([$nit]);
 
             if (mb_strlen($nit, 'UTF-8') > 20) {
                 $response["errores"][] = "El nit tiene una longitub mayor a lo permitido";
+            }
+            if ($stmt5->rowCount() > 0) {
+                $response["errores"][] = "Nit ya existente!";
             }
             if (mb_strlen($nombre, 'UTF-8') > 100) {
                 $response["errores"][] = "El nombre tiene una longitub mayor a lo permitido";
@@ -130,10 +134,6 @@
             echo json_encode($response);
         }
         $response["errores"] = [];
-    } else {
-        $response["success"] = false;
-        $response["message"] = "❌ Método no permitido.";
-        echo json_encode($response);
     }
 
     exit;
