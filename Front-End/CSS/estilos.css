@@ -291,7 +291,233 @@
 }
 
 
+/* Cuenta coordinador */
 
+#PrincipalCuentaCoor {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+}
+#PrincipalCoor {
+    display: flex;
+    min-height: 100vh;
+} #PrincipalCoor .lateralDiv1 {
+    background-color: rgb(0, 38, 49);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    width: 300px;
+    min-height: 100vh;
+} #PrincipalCoor .contenidoCoor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+} #PrincipalCoor .barraSuperior {
+    background-color: rgb(0, 56, 83);
+    color: white;
+    height: 110px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+} #PrincipalCoor .contenidoPrincipalCoor {
+    background-color: rgb(177, 175, 163);
+    flex: 1;
+} #PrincipalCoor .centrar-lateral {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} #PrincipalCoor .espTituloBS {
+    padding: 10px;
+} #PrincipalCoor .enlOccion, #PrincipalCoor .enlOccion2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    background-color: rgb(0, 38, 49);
+    border: none;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    width: 100%;
+    justify-content: flex-start;
+} #PrincipalCoor .enlOccion2:hover, #PrincipalCoor .enlOccion:hover {
+    background-color: rgb(0, 56, 83);
+} #PrincipalCoor .centrarIMG {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+} #PrincipalCoor .forma {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+} #PrincipalCoor .contenedorOpciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 60px;
+} #PrincipalCoor .filaOpciones {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+} #PrincipalCoor .filaCentro {
+    justify-content: center;
+} #PrincipalCoor .opcionTabla {
+    width: 380px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+} #PrincipalCoor .opcionTabla::before {
+    content: "";
+    position: absolute;
+    width: 160%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 191, 255, 0.2), rgba(255, 255, 255, 0.1));
+    top: -50%;
+    left: -30%;
+    transform: rotate(25deg);
+    transition: all 0.4s ease-in-out;
+    z-index: 0;
+} #PrincipalCoor .opcionTabla:hover::before {
+    top: 100%;
+} #PrincipalCoor .opcionTabla:hover {
+    transform: translateY(-8px) scale(1.04);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+} #PrincipalCoor .iconoOpcion {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 12px;
+    z-index: 1;
+    transition: transform 0.3s ease;
+} #PrincipalCoor .opcionTabla:hover .iconoOpcion {
+    transform: scale(1.1);
+} #PrincipalCoor .opcionTabla h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    z-index: 1;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Pagina de mostrar datos */
+#datosPersonales {
+    background-color: rgb(177, 175, 163);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} #datosPersonales .barra-superior {
+    background-color: #003853;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+} #datosPersonales .barra-superior img {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 4px solid white;
+} #datosPersonales .barra-superior h1, #datosPersonales .barra-superior h4 {
+    margin: 5px 0;
+    text-align: center;
+} #datosPersonales .barra-superior > div {
+    flex-grow: 1;
+    text-align: center;
+} #datosPersonales .contenedor-datos {
+    background-color: #c0c0b9;
+    margin: 50px auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+} #datosPersonales .fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+} #datosPersonales .campo {
+    flex: 1 1 22%;
+    background-color: #e6e6e6;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+} #datosPersonales .campo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+} #datosPersonales .campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+    font-size: 14px;
+} #datosPersonales .campo p {
+    margin: 0;
+    font-size: 16px;
+    color: #222;
+} #datosPersonales .fila-descripcion {
+    display: flex;
+    justify-content: center;
+} #datosPersonales .campo-descripcion {
+    background-color: #e6e6e6;
+    padding: 25px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+} #datosPersonales .campo-descripcion label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+    color: #444;
+} #datosPersonales .campo-descripcion p {
+    font-size: 16px;
+    color: #222;
+    margin: 0;
+} #datosPersonales .fila-boton {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+} #datosPersonales .boton-editar {
+    background-color: #003853;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+} #datosPersonales .boton-editar:hover {
+    background-color: #00506e;
+}
 
 
 
