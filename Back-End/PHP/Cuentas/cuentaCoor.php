@@ -148,15 +148,14 @@
             
             <div class="fila-boton">
                 <a href="" class="boton-editar" onclick="event.preventDefault(); mostrarSeccion('PrincipalCuentaCoor')">ATRAS</a>
-                <a href="" class="boton-editar espacio" onclick="mostrarSeccion('editarCoorPerso')">EDITAR</a>
+                <a href="" class="boton-editar espacio" onclick="event.preventDefault(); abrirEditarCoor()">EDITAR</a>
             </div>
         </main>
     </section>
 
-    <section id="editarCoorPerso">
-        <form action="formUpdateCoor">
-            <span id="cerrarEditarCoor" onclick="cerrarEditarCoor()">&times;</span>
-            <h1>Actualizar Datos personales</h1>
+    <section id="editarCoorPerso" class="oculto">
+        <form id="formUpdateCoor">
+            <h3>Actualizar Datos personales</h3>
             <input type="text" id="idCoorUpdate">
             <select id="t_d_CoorUpdate" required>
                 <option value="">--- Seleccione el tipo de documento ---</option>
@@ -188,19 +187,18 @@
             <input type="password" id="clave_CoorUpdate" placeholder="CLAVE" required/>
             <label for="foto" class="text-P-Foto">Foto de perfil:</label>
             <input type="file" id="foto_coor" accept="image/*">
-            <button class="btn-registrar" onclick="cerrarEditarCoor()">Actualizar</button>
-        </form>    
 
-        <main class="contenedorInputs">
-            <a href="" onclick="mostrarSeccion('PrincipalCuentaCoor')">Atras</a>
-        </main>
+            <div class="panel-botones">
+                <button type="button" onclick="cerrarEditarCoor()">Cerrar</button>
+                <button type="submit" class="btn-registrar">Actualizar</button>
+            </div>
+        </form>
     </section>
 
     <script>
         function mostrarSeccion(id) {
             document.getElementById('PrincipalCuentaCoor').style.display = 'none';
             document.getElementById('datosPersonales').style.display = 'none';
-            document.getElementById('editarCoorPerso').style.display = 'none';
 
             document.getElementById(id).style.display = 'block';
 
@@ -215,6 +213,17 @@
                 mostrarSeccion('PrincipalCuentaCoor');
             }
         });
+
+        function abrirEditarCoor() {
+            document.getElementById('editarCoorPerso').classList.remove('oculto');
+            document.getElementById('datosPersonales').classList.add('panel-opaco');
+        }
+
+        function cerrarEditarCoor() {
+            document.getElementById('editarCoorPerso').classList.add('oculto');
+            document.getElementById('datosPersonales').classList.remove('panel-opaco');
+        }
+
     </script>
 
     <script src="../../../Front-End/Js/cuentaCoor/mostrarDatos.js"></script>
