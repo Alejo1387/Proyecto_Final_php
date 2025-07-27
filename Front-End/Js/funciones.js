@@ -6,17 +6,15 @@ formularioIniciarS.addEventListener('submit', function(event) {
     const usuario = document.getElementById('usuario').value;
     const clave = document.getElementById('clave').value;
 
-    const datos = {
-        accion: 'GET',
-        funcion: 'iniciarSesion',
-        usuario: usuario,
-        clave: clave
-    }
+    const formData = new FormData();
+    formData.append('accion', 'GET');
+    formData.append('funcion', 'iniciarSesion');
+    formData.append('usuario', usuario);
+    formData.append('clave', clave);
 
-    fetch ('../../Back-End/APIs/iniciarS.php', {
+    fetch ('../../Back-End/APIs/controladores-APIs.php', {
         method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(datos)
+        body: formData
     })
     .then(res => res.json())
     .then(data => {

@@ -5,7 +5,6 @@
     ini_set('display_errors', 0);
     error_reporting(0);
 
-    $data = json_decode(file_get_contents("php://input"));
     require_once "conexion.php";
 
     function iniciarSesion($usuario, $clave) {
@@ -53,15 +52,15 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $accion = $data->accion;
+        $accion = $_POST["accion"];
 
         switch ($accion) {
             case 'GET':
-                $funcion = $data->funcion;
+                $funcion = $_POST["funcion"];
                 switch ($funcion) {
                     case 'iniciarSesion':
-                        $usuario = $data->usuario;
-                        $clave = $data->clave;
+                        $usuario = $_POST["usuario"];
+                        $clave = $_POST["clave"];
                         iniciarSesion($usuario, $clave);
                         break;
                     // Por si no llega la funcion
