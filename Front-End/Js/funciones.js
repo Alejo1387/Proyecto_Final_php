@@ -141,7 +141,7 @@ function formularioCrearCuentaCoor() {
 
         const formData = new FormData();
         formData.append('accion', 'INSERT');
-        formData.append('funcion', '../../Back-End/APIs/controladores-APIs.php');
+        formData.append('funcion', 'formularioCrearCuentaCoor');
         formData.append('id_col', id_col);
         formData.append('tipo_documento', tipo_documento);
         formData.append('numero_documento', numero_documento);
@@ -157,7 +157,7 @@ function formularioCrearCuentaCoor() {
         formData.append('clave', clave);
         formData.append('foto_coor', foto_coor);
 
-        fetch('../../Back-End/APIs/crearCuentaCoor.php', {
+        fetch('../../Back-End/APIs/controladores-APIs.php', {
             method: "POST",
             body: formData
         })
