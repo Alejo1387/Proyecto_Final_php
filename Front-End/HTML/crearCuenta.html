@@ -27,7 +27,7 @@
                     <label for="foto" class="text-P-Foto">Foto de perfil:</label>
                     <input type="file" id="foto_Colegio" name="foto" accept="image/*">
                     <br>
-                    <button class="btn-registrar" type="submit">CONTINUAR</button>
+                    <button class="btn-registrar" type="submit" onclick="formularioCrearCuentaColegio()">CONTINUAR</button>
                 </form>
                 <a href="./iniciarS.html"><p class="iniciar-sesion">Iniciar sesión</p></a>
                 <br><br>
@@ -37,7 +37,6 @@
     </section>
 
     <section id="pagina2">
-        <a href="" onclick="mostrarSeccion2('pagina1')">Regresar</a>
         <div class="contenedor">
             <div class="contenedor2">
                 <h1>CREAR CUENTA COORDINADOR</h1>
@@ -77,7 +76,7 @@
                     <input type="password" id="clave" name="clave" placeholder="CLAVE" required/>
                     <label for="foto" class="text-P-Foto">Foto de perfil:</label>
                     <input type="file" id="foto_coor" name="foto_coor" accept="image/*">
-                    <button class="btn-registrar">REGISTRARSE</button>
+                    <button class="btn-registrar" type="submit" onclick="formularioCrearCuentaCoor()">REGISTRARSE</button>
 
                     <br><br>
                     <p id="mensaje_coor2"></p>
@@ -86,7 +85,7 @@
         </div>
     </section>
 
-    <script src="../Js/crearCuenta/crearCuenta.js"></script>
+    <script src="../Js/funciones.js"></script>
     <script src="../Js/crearCuenta/configuracionSecciones.js"></script>
 </body>
 </html>

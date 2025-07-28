@@ -288,6 +288,9 @@
     color: #000;
     text-decoration: none;
     font-weight: bold;
+} #pagina2 #mensaje_coor, #pagina2 #mensaje_coor2 {
+    padding: 20px;
+    color: black;
 }
 
 
