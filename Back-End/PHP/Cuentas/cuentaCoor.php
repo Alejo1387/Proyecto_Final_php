@@ -29,7 +29,7 @@
                 <hr>
                 <div class="centrar-lateral">
                     <div class="centrarOccion">
-                        <a href="" class="enlOccion" onclick="event.preventDefault(); mostrarSeccion('datosPersonales')">
+                        <a href="" class="enlOccion" onclick="event.preventDefault(); mostrarSeccion('datosPersonales'); mostrarDatosCoor()">
                             <img src="../../../Front-End/IMG/fotoOccionCoor.png" width="20px" class="redondear centrarIMG"> 
                             Datos Personales
                         </a>
@@ -156,7 +156,7 @@
     <section id="editarCoorPerso" class="oculto">
         <form id="formUpdateCoor">
             <h3>Actualizar Datos personales</h3>
-            <input type="text" id="idCoorUpdate">
+            <input type="hidden" id="idCoorUpdate">
             <select id="t_d_CoorUpdate" required>
                 <option value="">--- Seleccione el tipo de documento ---</option>
                 <option value="CC" >Cédula de Ciudadania = CC</option>
@@ -226,6 +226,11 @@
 
     </script>
 
-    <script src="../../../Front-End/Js/cuentaCoor/mostrarDatos.js"></script>
+    <script src="../../../Front-End/Js/funciones.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            mostrarDatosCoor();
+        });
+    </script>
 </body>
 </html>

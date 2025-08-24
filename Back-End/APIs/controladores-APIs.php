@@ -2,8 +2,8 @@
 
     ob_clean();
     header("Content-Type: application/json");
-    ini_set('display_errors', 0);
-    error_reporting(0);
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 
     require_once "conexion.php";
 
@@ -328,6 +328,32 @@
         $response["errores"] = [];
     }
 
+    // Funcion para mostrarDatosCoor
+    function mostrarDatosCoor($usuario) {
+        global $pdo;
+
+        $sql = "SELECT * FROM COORDINADORES WHERE usuario = ?";
+
+        $stmt = $pdo->prepare($sql);
+
+        try {
+            $stmt->execute([$usuario]);
+
+            // Esto es para obtener los datos en un array asosiativo
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($resultado) {
+                echo json_encode($resultado);
+            } else {
+                echo json_encode(["error" => "Usuario no encontrado"]);
+            }
+        } catch (PDOException $e) {
+            echo json_encode(["error" => $e->getMessage()]);
+        }
+
+        exit;
+    }
+
 
     // CONDICIONALES PARA SABER LA ACCION Y LA FUNCION
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -373,6 +399,21 @@
                         break;
                     
                     // Por si no llega la funcion
+                    default:
+                        echo json_encode("Error");
+                }
+                break;
+            
+            // Casos SELECT
+            case 'SELECT':
+                $funcion = $_POST["funcion"];
+                switch ($funcion) {
+                    case 'mostrarDatosCoor':
+                        $usuario = $_POST["usuario"];
+                        mostrarDatosCoor($usuario);
+                        break;
+                    
+                    // Pro si no llega la funcion
                     default:
                         echo json_encode("Error");
                 }
